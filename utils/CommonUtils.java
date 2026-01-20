@@ -1,5 +1,7 @@
-package abc_dev_2710_re2.cours;
+package utils;
 
 public class CommonUtils {
-    
+    public static void main(String[] args) {
+        
+    }
 }

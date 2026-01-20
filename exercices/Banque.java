@@ -6,48 +6,50 @@ public class Banque {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        double  capital = 1;
-        int     nbmois;
-        int     numeroMois = 1;
-        double  partInteret,
-                partCapital,
-                capitalRestant = capital;
+        double capital;
+        int nbmois;
 
         System.out.println(" Veuiller saisir le capital à emprunter :");
         capital = sc.nextDouble();
+
         System.out.println("Veuiller saisir le taux d'intérêt annuel ");
         double tauxmensuel = (sc.nextDouble()) / 1200;
+
         System.out.println("Veuiller saisir la durée dde remboursement (en années)");
         nbmois = (sc.nextInt()) * 12;
-        double mensualite = Banque.calculMensualite(capital, nbmois, tauxmensuel);
 
+        double mensualite = Banque.calculMensualite(capital, nbmois, tauxmensuel);
         System.out.printf("Votre mensualité de rembourserment sera de %.2f Euros ", mensualite);
 
+        int numeroMois = 1;
 
+        double partInteret;
+        double partCapital;
+        double capitalRestant = capital;
 
+        System.out.println(" tableau d'amortissement du Prêt \n ---------------------------------------------\n");
+        
         do {
             partInteret = capitalRestant * tauxmensuel;
             partCapital = mensualite - partInteret;
 
-            // if (numeroMois > 1) {
+            // k(n+1)=k(n)- part_Capital(n)
+            capitalRestant -= partCapital;
 
-            //     // k(n+1) = k(n)-part_Capital(n)
-            //     capitalRestant -= partCapital;
-            
-                
-            // }
-            // else {
-                
-            // }
-            
-            // part_Intert(n+1) = k(n)*tm
+            // part_Interet(n+1) = K(n)*tm
 
-            System.out.printf("numMois : %d // partIntérêt : %.1f // partCapital : %1.f // capitalRestant : %.0f // mensualité : %0f",numeroMois, partInteret, partCapital, capitalRestant, mensualite);
-            
+            System.out.printf(
+                    "numMois : %d // partIntérêt : %.1f // parCapital : %.1f // capitalRestant: %.0f // mensualité : %.0f  %n",
+                    numeroMois, partInteret, partCapital, capitalRestant, mensualite);
+
             numeroMois++;
 
         } while (numeroMois <= nbmois);
+        // tableau avec utilisation d'une fonction
+        
+        System.out.println("Voici votre tableau d'amortissement : \n" + Banque.tabAmortissement(mensualite, nbmois, capital, tauxmensuel));
 
+        sc.close();
     }
 
     private static double calculMensualite(double _capital, int _nbmois, double _tauxmensuel) {
@@ -62,19 +64,28 @@ public class Banque {
 
     }
 
-    // public static double calculMensualite( double _cap, double _tauxannuel )
-    // {
-    // double mensualite=0;
+    public static String tabAmortissement(double _mensualite, int _nbmois, double _capital, double _tauxmensuel) {
 
-    // return mensualite;
+        String chaineResult = "numero de mois \t  part intérêt \t part capital \t capital restant du \t mensualité \n";
 
-    // }
-    // public static double calculMensualite( double cap )
-    // {
-    // double mensualite=0;
+        double part_Interet = _capital * _tauxmensuel;
+        double part_Capital = _mensualite - part_Interet;
+        double capital_Restant = _capital;
 
-    // return mensualite;
+        for (int i = 0; i <= _nbmois; i++) {
+            chaineResult += i + " \t\t" + arrondi(part_Interet, 1) + " \t\t" + arrondi(part_Capital, 1) + "\t\t" + Math.round(capital_Restant) + "\t\t\t" + ((i != _nbmois) ? Math.round(_mensualite) : 0) + "\n";
+            capital_Restant -= part_Capital;
+            part_Interet = capital_Restant * _tauxmensuel;
+            part_Capital = _mensualite - part_Interet;
+        }
 
-    // }
+        return chaineResult;
 
+    }
+
+    public static double arrondi(double nb, int nv) {
+
+        return (double) ((long) (nb * Math.pow(10, nv) + 0.5)) / Math.pow(10, nv);
+
+    }
 }
