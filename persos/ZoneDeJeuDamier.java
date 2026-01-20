@@ -1,4 +1,4 @@
-package exocoursfranck;
+package persos;
 
 import java.util.Scanner;
 

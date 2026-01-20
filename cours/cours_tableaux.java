@@ -1,4 +1,4 @@
-package abc_dev_2710.coursFranck;
+package abc_dev_2710_re2.cours;
 
 public class cours_tableaux
 {

@@ -10,7 +10,9 @@ public class trainGPT1 {
 
         // for (i=N;i>=0;i--) System.out.println(i);
         // for (i=N;i<=0;i++) System.out.println(i);
-        for (int i =N; i!=0; i=i+(-N/Math.abs(N))) System.out.println(i);
+        for (i = N; i!=0; i=i+(-N/Math.abs(N))){
+            System.out.println(i);
+        }
 
         sc.close();
     }
