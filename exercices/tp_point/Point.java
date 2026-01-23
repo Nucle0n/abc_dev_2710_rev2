@@ -16,11 +16,7 @@
 // Travail à faire :
 
 // 1) Faire un diagramme de classe détaillé ( niveau de visibilité des membres, signature des méthodes )
-
-// Solution.
-
 // 2) Ecrire en Java la déclaration de la classe, avec ses attributs privés.
-
 // 3) Afin de tester les méthodes de la classe Point, écrire une classe AppPoint - enregistrer le fichier sous le nom ExoPoint.cs - qui testera chaque méthode dans sa méthode Point
 
 
@@ -39,36 +35,36 @@ public class Point {
         this.y = y;
     }
 
-    public void seDeplacer(double _newX, double _newY){
-        this.x = _newX;
-        this.y = _newY;
+    public void seDeplacer(double newX, double newY){
+        this.x = newX;
+        this.y = newY;
     }
-    public void permuter(Point unPoint){
-        double temp = unPoint.x;
-        unPoint.x = unPoint.y;
-        unPoint.y = temp;
+    public Point permuter(){
+        double temp = x;
+        x = y;
+        y = temp;
     }
 
     // Symétrie axe des ordonnées
-    public Point symOrdonnees(Point unPoint) {
-        return new Point(unPoint.x, -unPoint.x);
+    public Point symOrdonnees() {
+        return new Point(-x, y);
     }
 
     // Symétrie axe des abscisses
-    public Point symAbscisse(Point unPoint) {
-        return new Point(unPoint.y, -unPoint.y);
+    public Point symAbscisse() {
+        return new Point(x, -y);
     }
 
     // Symétrie par rapport à l'origine
-    public Point symOrigine(Point unPoint) {
-        return new Point(-unPoint.x, -unPoint.y);
+    public Point symOrigine() {
+        return new Point(-x, -y);
     }
 
     // Redéfinition de toString
-    public String toString() {
-        return "( point " + x + "," + y + ")";
+    public void displayCoord() {
+        System.out.printf("(Point %.0f,%.0f)%n",x ,y);
     }
-
+}
 
 
 //     // Accesseurs
@@ -88,5 +84,3 @@ public class Point {
 //     public void setY(double newVal) {
 //         this.y = newVal;
 //     }
-
-}
