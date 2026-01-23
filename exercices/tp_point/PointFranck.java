@@ -67,9 +67,9 @@ public class PointFranck {
     }
 
     public double calculDistance(PointFranck autrePoint){
-        double resCarre = Math.sqrt(Math.pow( (autrePoint.getX() - this.X),2) + Math.pow( (autrePoint.getY() - this.Y),2));
+        double res = Math.sqrt(Math.pow( (autrePoint.getX() - this.X),2) + Math.pow( (autrePoint.getY() - this.Y),2));
         // double res = Math.sqrt(resCarre);
-        return Math.round(resCarre);
+        return Math.round(res);
     }
 
 
