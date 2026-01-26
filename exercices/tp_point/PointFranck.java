@@ -53,23 +53,22 @@ public class PointFranck {
 
     
     public PointFranck symOrdonnees(){
-        PointFranck symOPoint = new PointFranck(-this.X,-this.Y);
+        PointFranck symOPoint = new PointFranck(-this.X,this.Y);
         return symOPoint;
     }
 
     public PointFranck symOrigine(){
-        PointFranck symOPoint = new PointFranck(-this.X,-this.Y);
-        return symOPoint;
+        PointFranck symOriPoint = new PointFranck(-this.X,-this.Y);
+        return symOriPoint;
     }
 
     public String toString(){
-        return "(Point "+X+","+Y+")";
+        return "(Point "+(int)this.X+","+(int)this.Y+")"; // (int) Converti le résultat en entier, attention donc !
     }
 
     public double calculDistance(PointFranck autrePoint){
-        double res = Math.sqrt(Math.pow( (autrePoint.getX() - this.X),2) + Math.pow( (autrePoint.getY() - this.Y),2));
-        // double res = Math.sqrt(resCarre);
-        return Math.round(res);
+        double distance = Math.sqrt(Math.pow( (autrePoint.getX() - this.X),2) + Math.pow( (autrePoint.getY() - this.Y),2));
+        return Math.round(distance);
     }
 
 
