@@ -1,4 +1,8 @@
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.Instant;
+import javax.imageio.IIOException;
 
 /**
  * @author TGuinchard
@@ -7,17 +11,14 @@
  */
 public class Compte {
 
+	// Attributs
 	private long id;
 	private int overdraft;
 	private String ownerName;
 	private double solde;
 
-
-
-	public void finalize() throws Throwable {
-
-	}
-
+	// Propriétés
+	
 	public final void Compte(){
 
 	}
@@ -49,7 +50,7 @@ public class Compte {
 		return false;
 	}
 
-	public int getid(){
+	public long getid(){
 		return id;
 	}
 
@@ -93,5 +94,19 @@ public class Compte {
 	public boolean transfert(Compte autreCompte, double montant){
 		return false;
 	}
+
+	public String creerCompte(String _nom){
+		long timestamp = Instant.now().toEpochMilli();
+		String id = String.valueOf(timestamp);
+
+		try (BufferedWriter writer= new BufferedWriter(new FileWriter(FICHIER,true))){
+			writer.write(nom + ";" + id);
+			writer.newLine();
+		}
+		catch (IOException e){
+			System.out.println("Erreur lors de la creation du compte");
+		}
+        return id;
+    }
 
 }
