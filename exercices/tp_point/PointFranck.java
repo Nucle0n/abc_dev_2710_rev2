@@ -29,12 +29,13 @@ public class PointFranck {
         this.X = 0;
         this.Y = 0;
     }
-
+    // Constructeur sruchargé
     public PointFranck(double _X, double _Y){
         this.X = _X;
         this.Y = _Y;
     }
 
+    //----------------------
     public void permuter(){
         double temp = this.X;
         this.X = this.Y;
