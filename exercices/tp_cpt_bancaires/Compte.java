@@ -8,7 +8,7 @@ public class Compte {
 
 	// Attributs
 	private long id;
-	private int decouvert;
+	private double decouvert;
 	private String ownerName;
 	private double solde;
 
@@ -73,8 +73,8 @@ public class Compte {
 		return (retrait >= solde - decouvert); // "Si" induit. Si remove est supérieur ou égale solde moins le montant (négatif - - = +) retiré la condition est validée donc true
 	} 
 
-	public void debit(double remove){
-		solde -= remove
+	public void debit(double retrait){
+		solde -= retrait
 	}
 
 
