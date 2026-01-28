@@ -8,7 +8,7 @@ public class Compte {
 
 	// Attributs
 	private long id;
-	private int overdraft;
+	private int decouvert;
 	private String ownerName;
 	private double solde;
 
@@ -17,15 +17,15 @@ public class Compte {
 	public Compte(){
 		this.ownerName 	= "";
 		this.id 		= 0;
-		this.overdraft 	= 0;
+		this.decouvert 	= 0;
 		this.solde 		= 0;
 	}
 
 	// Constructeurs surchargé
-	public Compte(String _ownerName, long _id, double _solde, double _overdraft){
+	public Compte(String _ownerName, long _id, double _solde, double _decouvert){
 		this.ownerName 	= _ownerName;
 		this.id 		= _id;
-		this.overdraft 	= _overdraft;
+		this.decouvert 	= _decouvert;
 		this.solde 		= _solde;
 	}
 
@@ -55,37 +55,22 @@ public class Compte {
 		solde = newVal;
 	}
 
-	public double getoverdraft(){
-		return overdraft;
+	public double getdecouvert(){
+		return decouvert;
 	}
 
-	public double setoverdraft(double newVal){
-		overdraft = newVal;
+	public double setdecouvert(double newVal){
+		decouvert = newVal;
 	}
 
 	////////-------------------------------
-
-	public void setoverdraft(int newVal){
-		overdraft = newVal;
-	}
-
 	
-	
-	/**
-	 * 
-	 * @param add
-	 */
 	public void credit(double add){
 		solde += add;
 	}
 
-	/**
-	 * 
-	 * @param remove
-	 */
-	public boolean verifDebit(double remove){
-		if (remove > solde - overdraft)
-			return false;
+	public boolean verifDebit(double retrait){
+		return (retrait >= solde - decouvert); // "Si" induit. Si remove est supérieur ou égale solde moins le montant (négatif - - = +) retiré la condition est validée donc true
 	} 
 
 	public void debit(double remove){
@@ -93,26 +78,17 @@ public class Compte {
 	}
 
 
-
-	/**
-	 * 
-	 * @param autreCompte
-	 */
 	public boolean superieur(Compte autreCompte){
-		return false;
+		return id > autreCompte;
 	}
 
 	public String toString(){
 		return "";
 	}
 
-	/**
-	 * 
-	 * @param autreCompte
-	 * @param montant
-	 */
-	public boolean transfert(Compte autreCompte, double montant){
-		return false;
+	public void transfert(Compte autreCompte, double montant){
+		id -= montant;
+		autreCompte += montant;
 	}
 
 	// public String creerCompte(String _nom){
