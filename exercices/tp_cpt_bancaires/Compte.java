@@ -83,7 +83,7 @@ public class Compte {
 	}
 
 	public String toString(){
-		return "";
+		return "Titulaire : "+ownerName+"\nNumero de compte : "+id+"\nSolde : "+solde+"\nLimite de découvert : "+decouvert;
 	}
 
 	public void transfert(Compte autreCompte, double montant){
