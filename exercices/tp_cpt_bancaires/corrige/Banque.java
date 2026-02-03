@@ -29,7 +29,7 @@ public class Banque {
 
     }
 
-    private void ajouteCompte(Compte unCompte){
+    public void ajouteCompte(Compte unCompte){
         listComptes[nbComptes++] = unCompte;
     }
 
@@ -41,7 +41,20 @@ public class Banque {
             System.out.print("\n");
             }
         }
-
     }
+
+    public Compte compteSup(){
+        double temp = 0;
+        int indice = 0;
+        for (int i = 0; i < nbComptes; i++) {
+            if (listComptes[i].getsolde() > temp){
+                temp = listComptes[i].getsolde();
+                indice = i;
+            }
+        }
+        return listComptes[indice];
+    }
+
+    
     
 }

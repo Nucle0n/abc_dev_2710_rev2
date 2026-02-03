@@ -8,5 +8,13 @@ public class AppBanque {
 
         b.afficherComptes();
 
+        b.ajouteCompte(new Compte("Dutronc", 4500, -500));
+
+        System.out.println("\n--------------\nAjout du compte de Mr Dutronc :");
+        b.afficherComptes();
+
+        
+        System.out.println("\n"+b.compteSup());
+
     }
 }

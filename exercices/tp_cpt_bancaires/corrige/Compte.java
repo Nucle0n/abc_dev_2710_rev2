@@ -56,7 +56,7 @@ public class Compte {
 
     public Compte(String _nomProprio, double _solde, double _decouvertAutorise) {
         LocalDateTime locTimes = LocalDateTime.now();
-        this.numero = locTimes.hashCode();
+        this.numero = Math.abs(locTimes.hashCode());
         this.nomPropietaire = _nomProprio;
         this.solde = _solde;
         this.decouvertAutorise = _decouvertAutorise;
@@ -133,7 +133,7 @@ public class Compte {
      * @return renvoie la chaine de description du compte
      */
     public String toString() {
-        return "Compte n°" + this.numero +
+        return "Compte n° 5500" + this.numero +
                 "\tPropriétaire: " + this.nomPropietaire +
                 "\tSolde: " + this.solde + " €" +
                 "   \tDécouvert autorisé: " + this.decouvertAutorise + " €";
