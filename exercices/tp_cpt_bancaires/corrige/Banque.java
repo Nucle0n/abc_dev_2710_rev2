@@ -35,9 +35,9 @@ public class Banque {
 
     public void afficherComptes(){
         System.out.print("\n");
-        for (Compte nCompte : listComptes) {
-            if (nCompte != null){
-            System.out.print(nCompte);
+        for (Compte nbCompte : listComptes) {
+            if (nbCompte != null){
+            System.out.print(nbCompte);
             System.out.print("\n");
             }
         }
@@ -54,6 +54,14 @@ public class Banque {
         }
         return listComptes[indice];
     }
+
+    // public Compte rendCompte(int _numero){
+    //     for (int i = 0; i < nbComptes; i++) {
+    //         if (listComptes[i].getnumero == _numero)
+
+    //     }
+
+    // }
 
 
     
