@@ -133,10 +133,15 @@ public class Compte {
      * @return renvoie la chaine de description du compte
      */
     public String toString() {
-        return "Compte n° 5500" + this.numero +
-                "\tPropriétaire: " + this.nomPropietaire +
-                "\tSolde: " + this.solde + " €" +
-                "   \tDécouvert autorisé: " + this.decouvertAutorise + " €";
+        return "Compte n° \033[38;2;255;235;18m5500" + this.numero +"\033[m"+
+                "\tPropriétaire: \033[38;2;18;156;255m" + this.nomPropietaire +"\033[m"+
+                "\tSolde: \033[38;2;255;235;18m" + arrondi(this.solde) +"\033[m"+ "€" +
+                "   \tDécouvert autorisé: \033[38;2;255;235;18m" + arrondi(this.decouvertAutorise) +"\033[m"+ "€";
     }
+
+    public static double arrondi(double _unNombre){
+        return Math.round(_unNombre*100.0)/100.0;
+    }
+
 
 }

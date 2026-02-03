@@ -3,6 +3,14 @@ package corrige;
 public class AppBanque {
     public static void main(String[] args) {
         
+        // Couleurs
+        String  YELLOW  = "\033[38;2;255;234;0m",
+                LBLUE   = "\033[38;2;18;156;255m",
+                LGREEN  = "\033[38;2;0;255;145m",
+                ENDCOL  = "\033[m",
+
+                BG      = "\033[48;2;35;130;94m";
+
         Banque b = new Banque();
         b.Init();
 
@@ -10,11 +18,24 @@ public class AppBanque {
 
         b.ajouteCompte(new Compte("Dutronc", 4500, -500));
 
-        System.out.println("\n--------------\nAjout du compte de Mr Dutronc :");
+        System.out.println("\n--------------\n"+BG+LGREEN+"Ajout du compte de Mr Dutronc :"+ENDCOL);
         b.afficherComptes();
 
         
         System.out.println("\n"+b.compteSup());
+
+        System.out.println("\n--------------\n");
+
+        CompteEpargne Haddock = new CompteEpargne("Haddock", 22950.0, 0.0, 0.75);
+
+        double[] tab24 = new double[24];
+        for (int i = 0; i < tab24.length; i++) {
+            tab24[i] = 22950;
+        }
+
+        double interets = Haddock.calculInteretAnnuel(tab24);
+
+        System.out.println("Intérets annnuels : "+interets+"€");
 
     }
 }

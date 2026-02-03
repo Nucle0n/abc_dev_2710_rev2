@@ -13,9 +13,9 @@ public class Banque {
     }
         
     public void Init(){
-        Compte c1 = new Compte("Toto", 5200, -500);
-        Compte c2 = new Compte("Titi", 10200, -500);
-        Compte c3 = new Compte("Dupond", 3200, 0);
+        Compte c1 = new Compte("Toto", 5200.52875, -500);
+        Compte c2 = new Compte("Titi", 10200.4632, -500);
+        Compte c3 = new Compte("Dupond", 3200.455, 0);
         Compte c4 = new Compte("Durand", 12200, -2000);
         Compte c5 = new Compte("Dubois", 8000, -200);
         Compte c6 = new Compte("Duval", 2200, 0);
@@ -55,6 +55,6 @@ public class Banque {
         return listComptes[indice];
     }
 
-    
+
     
 }

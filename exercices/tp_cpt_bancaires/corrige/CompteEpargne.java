@@ -27,7 +27,7 @@ public class CompteEpargne extends Compte {
      * 
      */
     public double gettaux_interet() {
-        return taux_interet;
+        return taux_interet*100;
     }
 
     /**
@@ -60,7 +60,7 @@ public class CompteEpargne extends Compte {
             sommeInteret += (solde * taux_interet) / 24.0;
 
         }
-        return sommeInteret;
+        return CompteEpargne.arrondi(sommeInteret);
 
     }
 
