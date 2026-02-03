@@ -1,3 +1,5 @@
+package corrige;
+
 public class Banque {
 
     private int nbComptes;
@@ -31,10 +33,13 @@ public class Banque {
         listComptes[nbComptes++] = unCompte;
     }
 
-    public static void afficherComptes(Compte[] _listComptes){
+    public void afficherComptes(){
         System.out.print("\n");
-        for (Compte nCompte : _listComptes) {
+        for (Compte nCompte : listComptes) {
+            if (nCompte != null){
             System.out.print(nCompte);
+            System.out.print("\n");
+            }
         }
 
     }
