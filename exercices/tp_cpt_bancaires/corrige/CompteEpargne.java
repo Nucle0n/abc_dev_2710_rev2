@@ -45,7 +45,7 @@ public class CompteEpargne extends Compte {
      * @return String
      */
     public String toString() {
-        return super.toString() + " Taux d'intérêt :" + (this.taux_interet * 100) + "%";
+        return super.toString() + "\tTaux d'intérêt :\033[38;2;255;234;0m" + (this.taux_interet * 100) +"\033[m"+ "%";
     }
 
     /**

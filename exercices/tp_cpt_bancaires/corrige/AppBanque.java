@@ -1,17 +1,23 @@
 package corrige;
+import java.util.Scanner;
 
 public class AppBanque {
     public static void main(String[] args) {
         
         // Couleurs
+        
+        Scanner sc = new Scanner(System.in);
+        int     numMan;
+        
         String  YELLOW  = "\033[38;2;255;234;0m",
                 LBLUE   = "\033[38;2;18;156;255m",
                 LGREEN  = "\033[38;2;0;255;145m",
                 ENDCOL  = "\033[m",
 
                 BG      = "\033[48;2;35;130;94m";
+        
 
-        Banque b = new Banque();
+        Banque b = new Banque("ABC Bank");
         b.Init();
 
         b.afficherComptes();
@@ -37,5 +43,10 @@ public class AppBanque {
 
         System.out.println("Intérets annnuels : "+interets+"€");
 
+        System.out.print("\nEntrez un numéro de compte : ");
+        numMan = sc.nextInt();
+        System.out.println(b.rendCompte(numMan));
+        
+        sc.close();
     }
 }
