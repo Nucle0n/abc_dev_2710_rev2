@@ -28,8 +28,9 @@ public class AppBanque {
         b.afficherComptes();
 
         System.out.println("\n--------------\n"+LGREEN+"Compte avec le plus haut solde :\n"+ENDCOL);
-        System.out.println(b.compteSup());
-
+        int[] maPosition = {0};        
+        System.out.println(b.compteSup(maPosition));
+        System.out.println("la position du compte dans le tableau banque est : "+maPosition[0]);
 
         System.out.println(LGREEN+"\n---- Ajout du compte de Mr Cpt.Haddock ---"+ENDCOL);
         CompteEpargne Haddock = new CompteEpargne("Haddock", 22950.0, 0.0, 0.75);

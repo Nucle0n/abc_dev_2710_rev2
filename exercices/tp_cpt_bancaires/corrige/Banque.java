@@ -52,34 +52,34 @@ public class Banque {
         }
     }
 
-    public Compte compteSup(){
-        double temp = 0;
-        int indice = 0;
-        for (int i = 0; i < nbComptes; i++) {
-            if (listComptes[i].getsolde() > temp){
-                temp = listComptes[i].getsolde();
-                indice = i;
-            }
-            // else{
-            //     System.out.println("\033[3m\"Null\"\033[0m");
-            // }
-        }
-        return listComptes[indice];
-    }
+    // public Compte compteSup(){
+    //     double temp = 0;
+    //     int indice = 0;
+    //     for (int i = 0; i < nbComptes; i++) {
+    //         if (listComptes[i].getsolde() > temp){
+    //             temp = listComptes[i].getsolde();
+    //             indice = i;
+    //         }
+    //         // else{
+    //         //     System.out.println("\033[3m\"Null\"\033[0m");
+    //         // }
+    //     }
+    //     return listComptes[indice];
+    // }
 
     // Méthode plus académique pour compteSup
-    
-    // public Compte compteSup(){
-    //     Compte max = listComptes[0];
-    //     // int positionMax = 0;
-    //     for (int i = 1; i < nbComptes; i++) {
-    //         if (listComptes[i].getsolde() > max.getsolde()){
-    //             max = listComptes[i];
-    //             // positionMax = i;
-    //         }
-    //     }
-    //     return max;
-    // }
+
+    public Compte compteSup(int[] position){
+        Compte max = listComptes[0];
+        position[0] = 0;
+        for (int i = 1; i < nbComptes; i++) {
+            if (listComptes[i].getsolde() > max.getsolde()){
+                max = listComptes[i];
+                position[0] = i+1;
+            }
+        }
+        return max;
+    }
 
     public Compte rendCompte(int _numero){
         for (int i = 0; i < nbComptes; i++) {
