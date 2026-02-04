@@ -11,7 +11,7 @@ public class AppBanque {
         
         String  YELLOW  = "\033[38;2;255;234;0m",
                 LBLUE   = "\033[38;2;18;156;255m",
-                LGREEN  = "\033[38;2;0;255;145m",
+                LGREEN  = "\033[4;38;2;0;255;145m",
                 ENDCOL  = "\033[m",
 
                 BG      = "\033[48;2;35;130;94m";
@@ -24,15 +24,16 @@ public class AppBanque {
 
         b.ajouteCompte(new Compte("Dutronc", 4500, -500));
 
-        System.out.println("\n--------------\n"+BG+LGREEN+"Ajout du compte de Mr Dutronc :"+ENDCOL);
+        System.out.println("\n--------------\n"+LGREEN+"Ajout du compte de Mr Dutronc :"+ENDCOL);
         b.afficherComptes();
 
-        
-        System.out.println("\n"+b.compteSup());
+        System.out.println("\n--------------\n"+LGREEN+"Compte avec le plus haut solde :\n"+ENDCOL);
+        System.out.println(b.compteSup());
 
-        System.out.println("\n--------------\n");
 
+        System.out.println(LGREEN+"\n---- Ajout du compte de Mr Cpt.Haddock ---"+ENDCOL);
         CompteEpargne Haddock = new CompteEpargne("Haddock", 22950.0, 0.0, 0.75);
+        System.out.println(Haddock);
 
         double[] tab24 = new double[24];
         for (int i = 0; i < tab24.length; i++) {
@@ -41,9 +42,9 @@ public class AppBanque {
 
         double interets = Haddock.calculInteretAnnuel(tab24);
 
-        System.out.println("Intérets annnuels : "+interets+"€");
+        System.out.println("\033[1mIntérets annnuels : \033[m"+interets+"€");
 
-        System.out.print("\nEntrez un numéro de compte : ");
+        System.out.print("\nRecherche par numéro de compte : ");
         numMan = sc.nextInt();
         System.out.println(b.rendCompte(numMan));
         

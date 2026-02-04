@@ -4,8 +4,7 @@ public class Banque {
 
     private int         nbComptes;
     private Compte[]    listComptes;
-    private String      nomBanque;
-    private int         
+    private String      nomBanque;         
 
     // Constructeurs
     public Banque(String _nomBanque){
@@ -68,7 +67,8 @@ public class Banque {
         return listComptes[indice];
     }
 
-    // Methode plus académique pour la méthode compteSup
+    // Méthode plus académique pour compteSup
+    
     // public Compte compteSup(){
     //     Compte max = listComptes[0];
     //     // int positionMax = 0;
