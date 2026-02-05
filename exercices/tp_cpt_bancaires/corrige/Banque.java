@@ -1,30 +1,36 @@
 package corrige;
 
-public class Banque {
+import java.util.Scanner;
 
+public class Banque 
+{
     private int         nbComptes;
     private Compte[]    listComptes;
     private String      nomBanque;         
 
     // Constructeurs
-    public Banque(String _nomBanque){
+    public Banque(String _nomBanque)
+    {
         this.nbComptes = 0;
         this.listComptes = new Compte[20];
         this.nomBanque = _nomBanque;
     }
 
-    public void ajouteCompte(Compte unCompte){
+    public void ajouteCompte(Compte unCompte)
+    {
         listComptes[nbComptes] = unCompte;
         nbComptes++;
     }
 
-    public void ajouterNouveauCompte(String _nom, double _solde, double _decouvertAutorise){
+    public void ajouterNouveauCompte(String _nom, double _solde, double _decouvertAutorise)
+    {
         Compte unCompte = new Compte(_nom, _solde, _decouvertAutorise);
         this.ajouteCompte(unCompte);
     }
 
 
-    public void Init(){
+    public void Init()
+    {
         Compte c1 = new Compte("Toto", 5200.52875, -500);
         Compte c2 = new Compte("Titi", 10200.4632, -500);
         Compte c3 = new Compte("Dupond", 3200.455, 0);
@@ -38,29 +44,34 @@ public class Banque {
         this.ajouteCompte(c4);
         this.ajouteCompte(c5);
         this.ajouteCompte(c6);
-
     }
 
-    public void afficherComptes(){
+    public void afficherComptes()
+    {
         System.out.print("\n");
-        for (Compte element : listComptes) {            
-            if (element != null){
+        for (Compte element : listComptes) 
+        {            
+            if (element != null)
+            {
             System.out.print(element);
             System.out.print("\n");
             }
-
         }
     }
 
-    // public Compte compteSup(){
+    // public Compte compteSup()
+    // {
     //     double temp = 0;
     //     int indice = 0;
-    //     for (int i = 0; i < nbComptes; i++) {
-    //         if (listComptes[i].getsolde() > temp){
+    //     for (int i = 0; i < nbComptes; i++)
+    //     {
+    //         if (listComptes[i].getsolde() > temp)
+    //         {
     //             temp = listComptes[i].getsolde();
     //             indice = i;
     //         }
-    //         // else{
+    //         // else
+    //         // {
     //         //     System.out.println("\033[3m\"Null\"\033[0m");
     //         // }
     //     }
@@ -69,11 +80,14 @@ public class Banque {
 
     // Méthode plus académique pour compteSup
 
-    public Compte compteSup(int[] position){
+    public Compte compteSup(int[] position)
+    {
         Compte max = listComptes[0];
         position[0] = 0;
-        for (int i = 1; i < nbComptes; i++) {
-            if (listComptes[i].getsolde() > max.getsolde()){
+        for (int i = 1; i < nbComptes; i++)
+        {
+            if (listComptes[i].getsolde() > max.getsolde())
+            {
                 max = listComptes[i];
                 position[0] = i+1;
             }
@@ -81,16 +95,32 @@ public class Banque {
         return max;
     }
 
-    public Compte rendCompte(int _numero){
-        for (int i = 0; i < nbComptes; i++) {
+    public Compte rendCompte(int _numero)
+    {
+        for (int i = 0; i < nbComptes; i++) 
+        {
             if (listComptes[i].getnumero() == _numero)
             return listComptes[i];
         }
         return null;
-        
-
     }
 
+    public void compteParNum()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\nRecherche par numéro de compte : ");
+        int numMan = sc.nextInt();
+        System.out.println(rendCompte(numMan));
+    }
 
-    
+    public boolean transferer(int _numComptDebit, int _numComptcredit, int _montant)
+    {
+        Compte compteDebit = this.rendCompte(_numComptDebit);
+        Compte compteCredit = this.rendCompte(_numComptcredit);
+        if (compteDebit != null && compteCredit != null)
+        {
+            return compteDebit.transferer(_montant, compteCredit);
+        }
+        return false;
+    }
 }

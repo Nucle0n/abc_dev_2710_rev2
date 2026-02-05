@@ -1,11 +1,13 @@
 package corrige;
 import java.util.Scanner;
 
-public class AppBanque {
-    public static void main(String[] args) {
+public class AppBanque
+{
+    public static void main(String[] args)
+    {
         
         // Couleurs
-        
+
         Scanner sc = new Scanner(System.in);
         int     numMan;
         
@@ -37,7 +39,8 @@ public class AppBanque {
         System.out.println(Haddock);
 
         double[] tab24 = new double[24];
-        for (int i = 0; i < tab24.length; i++) {
+        for (int i = 0; i < tab24.length; i++)
+        {
             tab24[i] = 22950;
         }
 
@@ -45,10 +48,21 @@ public class AppBanque {
 
         System.out.println("\033[1mIntérets annnuels : \033[m"+interets+"€");
 
-        System.out.print("\nRecherche par numéro de compte : ");
-        numMan = sc.nextInt();
-        System.out.println(b.rendCompte(numMan));
-        
+        System.out.println("Test de transfert :");
+        System.out.print("Transfert depuis le compte : ");
+        int numCompteDebit = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Vers le compte : ");
+        int numCompteCredit = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Montant à transférer : ");
+        int montant = sc.nextInt();
+        sc.nextLine();
+
+        b.transferer(numCompteDebit, numCompteCredit, montant);
+        b.compteParNum();
+        b.compteParNum();
+
         sc.close();
     }
 }
