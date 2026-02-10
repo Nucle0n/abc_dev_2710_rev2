@@ -8,20 +8,23 @@
 public class Fraction {
 
 	// Attributs
-	private int Numerateur;
-	private int Denominateur;
+	private int numerateur;
+	private int denominateur;
 
 	// Constructeurs
 	public Fraction(){
-		
+		this.numerateur = 0;
+		this.denominateur = 1;
 	}
+
 	// Constructeurs surchargés
 		/**
 	 * 
 	 * @param _numerateur
 	 */
 	public Fraction(int _numerateur){
-
+		this.denominateur = 1;
+		this.numerateur = _numerateur;
 	}
 
 	/**
@@ -30,13 +33,14 @@ public class Fraction {
 	 * @param _numerateur
 	 */
 	public Fraction(int _denominateur, int _numerateur){
-
+		this.denominateur = _denominateur;
+		this.numerateur = _numerateur;
 	}
 
 	// Méthodes
 
 	public String toString(){
-		return "";
+		return "Fraction : "+numerateur+"/"+denominateur;
 	}
 
 	private int GetPgcd(){
