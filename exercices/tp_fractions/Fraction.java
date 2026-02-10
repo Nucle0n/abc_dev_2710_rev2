@@ -7,23 +7,43 @@
  */
 public class Fraction {
 
-	// Attributs 
+	// Attributs
 	private int Numerateur;
 	private int Denominateur;
 
+	// Constructeurs
 	public Fraction(){
+		
+	}
+	// Constructeurs surchargés
+		/**
+	 * 
+	 * @param _numerateur
+	 */
+	public Fraction(int _numerateur){
 
 	}
 
-	public void finalize() throws Throwable {
+	/**
+	 * 
+	 * @param _denominateur
+	 * @param _numerateur
+	 */
+	public Fraction(int _denominateur, int _numerateur){
 
 	}
 
-	public int GetPgcd(){
+	// Méthodes
+
+	public String toString(){
+		return "";
+	}
+
+	private int GetPgcd(){
 		return 0;
 	}
 
-	public void Reduire(){
+	private void Reduire(){
 
 	}
 
@@ -91,6 +111,14 @@ public class Fraction {
 		return null;
 	}
 
+	public void Oppose(){
+
+	}
+
+	public void Inverse(){
+
+	}
+
 	public int getNumerateur(){
 		return Numerateur;
 	}
@@ -115,12 +143,8 @@ public class Fraction {
 		Denominateur = newVal;
 	}
 
-	public void Oppose(){
 
-	}
 
-	public void Inverse(){
 
-	}
 
 }
