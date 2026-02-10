@@ -40,7 +40,7 @@ public class Fraction {
 	 * @param _denominateur
 	 * @param _numerateur
 	 */
-	public Fraction(int _denominateur, int _numerateur){
+	public Fraction(int _numerateur, int _denominateur){
 		
 		double res;
 		this.numerateur = _numerateur;
@@ -60,7 +60,7 @@ public class Fraction {
 	// Méthodes
 
 	public String toString(){
-		return "Fraction : " + this.numerateur + "/" + this.denominateur + "\n";
+		return this.numerateur + "/" + this.denominateur;
 	}
 
 	public void inverse(){
