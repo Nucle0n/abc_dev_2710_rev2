@@ -3,38 +3,50 @@
  * @version 1.0
  * @created 11-fevr.-2026 13:29:11
  */
-public class Moteur {
+public class Moteur 
+{
+
 	// Attributs
 	protected String marque;
 	protected int vMax;
 
-	// Accesseurs & Modifieurs
-	public String getMarque(){
+	// Accesseurs
+	public String getMarque()
+	{
 	return marque;
 	}
 
-	public int getvMax(){
+	public int getvMax()
+	{
 		return vMax;
 	}
-
-	public void setvMax(int newVal){
+	
+	// Modifieurs
+	public void setvMax(int newVal)
+	{
 		vMax = newVal;
 	}
 
 	// Constructeur à vide
-	public Moteur(){
+	public Moteur()
+	{
 		this.marque = "XXX";
 		this.vMax 	= 0;
 	}
 	
 	// Constructeur surchargé
-	/**
-	 *
-	 * @param _marque
-	 * @param _vitesse
-	 */
-	public Moteur(String _marque, int _vMax){
+	public Moteur(String _marque, int _vMax)
+	{
 		this.marque = _marque;
 		this.vMax = _vMax;
 	}
+
+	// Méthodes
+	public String toString()
+	{
+	return 	"\033[1;4mAbout motor :\033[m\n"
+			+ "Brand : "+ marque + "\n"
+			+ "S_Max : " + vMax + " km/h\n";
+	}
+
 }

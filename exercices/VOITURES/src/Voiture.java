@@ -10,92 +10,65 @@ public class Voiture {
 	protected int	 poids;
 	protected Moteur moteur;
 	
+	// Constructeur à vide
 	public Voiture(){
 		this.marque = "XXX";
 		this.modele = "XXX";
 		this.poids  = 1000;
-		this.moteur =
+		this.moteur = new Moteur();
 	}
 
-	public Voiture voiture(){
-		return null;
+	// Constructeur surchargés
+	public Voiture(String _marque, String _modele, Moteur _moteur){
+		this.marque = _marque;
+		this.modele = _modele;
+		this.moteur = _moteur;
 	}
 
-	/**
-	 * 
-	 * @param _marque
-	 * @param _modele
-	 * @param _moteur
-	 */
-	public Voiture voiture(String _marque, String _modele, Moteur _moteur){
-		return null;
+	public Voiture(String _marque, String _modele, Moteur _moteur, int _poids){
+		this.marque = _marque;
+		this.modele = _modele;
+		this.moteur = _moteur;
+		this.poids 	= _poids;
 	}
 
-	/**
-	 * 
-	 * @param _marque
-	 * @param _modele
-	 * @param _moteur
-	 * @param _poids
-	 */
-	public Voiture voiture(String _marque, String _modele, Moteur _moteur, int _poids){
-		return null;
+	// Méthodes
+	public String toString(){
+		return	"\n\033[1;4mAbout vehicule :\033[m\n"
+				+ marque
+				+ " " 
+				+ modele
+				+ ", "
+				+ poids
+				+ " kg\n";
 	}
 
 	public int defVitesseMax(){
-		return 0;
-	}
-
-	public String toString(){
-		return "";
+		int vitesseMax = Moteur.getvMax - (this.poids * 0.30);
+		return vitesseMax;
 	}
 
 	public String getMarque(){
 		return marque;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
-	public void setMarque(String newVal){
-		marque = newVal;
-	}
-
 	public String getModele(){
 		return modele;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
-	public void setModele(String newVal){
-		modele = newVal;
+	public Moteur getMoteur(){
+		return moteur;
 	}
 
 	public int getPoids(){
 		return poids;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public void setPoids(int newVal){
 		poids = newVal;
 	}
 
-	public int getMoteur(){
-		return moteur;
-	}
-
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public void setMoteur(int newVal){
 		moteur = newVal;
 	}
-
 }
