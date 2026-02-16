@@ -18,9 +18,9 @@ public class App {
             salaires.add(d);            
         }
 
-        for (int i = 1; i < 15; i++) 
-        {
-            salaires.add(salaires.get(i-1) + 50);
+        // for (int i = 1; i < 15; i++) 
+        // {
+        //     salaires.add(salaires.get(i-1) + 50);
 
 
 
