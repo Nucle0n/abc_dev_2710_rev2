@@ -79,26 +79,29 @@ public class Methodes {
 
     public static double mediane(ArrayList<Double> _salaires){
         
-        double res;
+        int temps = 0;
+        double res = 0.0;
 
         if (_salaires.size() % 2 == 0)
             {
-                res = (_salaires.size() / 2);
-                return (double)(_salaires.get(res) + _salaires.get(res + 1)) / 2;
+                temps = (_salaires.size() / 2);
+                return (_salaires.get(temps + 1) + _salaires.get(temps)) / 2;
             }
             else
             {
-                res = (double)(( _salaires.size() - 1 ) / 2 ) + 1;
-                return (double)_salaires.get(res);
+                temps = ((_salaires.size() - 1 ) / 2 ) + 1;
+                return _salaires.get(temps);
             }
     }
 
     public static double ecart(){
-        
+        double tmp = 0.0;
+        return tmp;
     }
 
     public static double quartile(){
-        
+        double tmp = 0.0;
+        return tmp;
     }
 
 }
