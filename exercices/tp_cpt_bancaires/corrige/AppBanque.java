@@ -30,7 +30,7 @@ public class AppBanque
         b.afficherComptes();
 
         System.out.println("\n--------------\n"+LGREEN+"Compte avec le plus haut solde :\n"+ENDCOL);
-        int[] maPosition = {0};        
+        int[] maPosition = {0};
         System.out.println(b.compteSup(maPosition));
         System.out.println("la position du compte dans le tableau banque est : "+maPosition[0]);
 
