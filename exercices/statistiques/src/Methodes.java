@@ -60,15 +60,15 @@ public class Methodes {
         return salaires;
     }
 
-    public static double moyenne(ArrayList<Double> _salaires){
+    public static double moyenne(ArrayList<Double> _liste){
         
         double total = 0;
 
         // avec fori
-        for (int i = 0; i < _salaires.size(); i++) {
-            total += _salaires.get(i);
+        for (int i = 0; i < _liste.size(); i++) {
+            total += _liste.get(i);
         }
-        return total/_salaires.size();
+        return total/_liste.size();
 
         // avec foreach (Simon)
         // for (double element : liste) {
@@ -77,31 +77,41 @@ public class Methodes {
         // return total/liste.size();
     }
 
-    public static double mediane(ArrayList<Double> _salaires){
+    public static double mediane(ArrayList<Double> _liste){
         
         int temps = 0;
         double res = 0.0;
 
-        if (_salaires.size() % 2 == 0)
+        if (_liste.size() % 2 == 0)
             {
-                temps = (_salaires.size() / 2);
-                return (_salaires.get(temps + 1) + _salaires.get(temps)) / 2;
+                temps = (_liste.size() / 2);
+                return (_liste.get(temps - 1) + _liste.get(temps)) / 2;
             }
             else
             {
-                temps = ((_salaires.size() - 1 ) / 2 ) + 1;
-                return _salaires.get(temps);
+                temps = ((_liste.size() - 1 ) / 2 );
+                return _liste.get(temps);
             }
     }
 
     public static double ecart(){
         double tmp = 0.0;
+
         return tmp;
     }
 
-    public static double quartile(){
+    public static double quartile(ArrayList<Double> _liste){
+        
         double tmp = 0.0;
-        return tmp;
+        double res = 0.0;
+
+        for (double e : _liste.size()){
+            tmp += Math.pow((_liste.get(e) - Methodes.moyenne(_liste)),2)            
+        }
+
+        res = Math.sqrt(tmp*0.001)
+
+        return res;
     }
 
 }

@@ -42,11 +42,16 @@ public class Moteur
 	}
 
 	// Méthodes
+	/**
+	 * Display motor details
+	 * @return String
+	 */
+	@Override
 	public String toString()
 	{
 	return 	"\033[1;4mAbout motor :\033[m\n"
-			+ "Brand : "+ marque + "\n"
-			+ "S_Max : " + vMax + " km/h\n";
+			+ "Brand : "+ this.marque + "\n"
+			+ "S_Max : " + this.vMax + " km/h\n";
 	}
 
 }
