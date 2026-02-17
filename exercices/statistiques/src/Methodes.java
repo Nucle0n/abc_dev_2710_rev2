@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Methodes {
     
@@ -55,7 +56,8 @@ public class Methodes {
             salaires.add(salaires.get(i-1) + 400);
         }
         
-        salaires.sort(null);
+        // salaires.sort(Comparator.naturalOrder());
+        salaires.sort(Comparator.reverseOrder());
 
         return salaires;
     }
@@ -94,24 +96,32 @@ public class Methodes {
             }
     }
 
-    public static double ecart(){
-        double tmp = 0.0;
-
-        return tmp;
-    }
-
-    public static double quartile(ArrayList<Double> _liste){
+    public static double ecart(ArrayList<Double> _liste){
         
         double tmp = 0.0;
         double res = 0.0;
 
-        for (double e : _liste.size()){
-            tmp += Math.pow((_liste.get(e) - Methodes.moyenne(_liste)),2)            
+        for (double e : _liste){
+            tmp += Math.pow((e - Methodes.moyenne(_liste)),2);            
         }
-
-        res = Math.sqrt(tmp*0.001)
-
+        res = Math.sqrt(tmp/100);
         return res;
+    }
+
+    /**
+     * 
+     * Quartiles
+     * @param _liste
+     * @return double
+     */
+    public static double q1(ArrayList<Double> _liste){
+        double q1 = Methodes.moyenne(_liste) - 0.674 * Methodes.ecart(_liste);
+        return q1;
+    }
+
+    public static double q3(ArrayList<Double> _liste){
+        double q3 = Methodes.moyenne(_liste) + 0.674 * Methodes.ecart(_liste);
+        return q3;
     }
 
 }

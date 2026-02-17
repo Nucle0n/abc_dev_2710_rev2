@@ -1,9 +1,11 @@
+import java.util.Comparator;
+
 /**
  * @author TGuinchard
  * @version 1.0
  * @created 11-f�vr.-2026 10:40:08
  */
-public class Voiture {
+public class Voiture implements Comparable<Voiture> {
 
 	protected String marque;
 	protected String modele;
@@ -16,13 +18,6 @@ public class Voiture {
 		this.modele = "XXX";
 		this.poids  = 1000;
 		this.moteur = new Moteur();
-	}
-
-	// Constructeur surchargés
-	public Voiture(String _marque, String _modele, Moteur _moteur){
-		this.marque = _marque;
-		this.modele = _modele;
-		this.moteur = _moteur;
 	}
 
 	public Voiture(String _marque, String _modele, Moteur _moteur, int _poids){
@@ -45,8 +40,13 @@ public class Voiture {
 
 	public int defVitesseMax(){
 		int vitesseMax = Moteur.getvMax - (this.poids * 0.30);
+		if (vitesseMax < 0){
+			return 0;
+		}
 		return vitesseMax;
 	}
+
+
 
 	public String getMarque(){
 		return marque;
@@ -71,4 +71,9 @@ public class Voiture {
 	public void setMoteur(int newVal){
 		moteur = newVal;
 	}
+
+	public int compareTo(Voiture _autreVoiture){
+		return String.compare(this.marque, _autreVoiture.getMarque());
+	}
+	
 }

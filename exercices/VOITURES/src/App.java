@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class App {
@@ -61,5 +63,24 @@ public class App {
         Voiture vc2 = new VoitureDeCourse(voitMarque, voitModele, mbubule, voitPoids);
         System.out.println(vc2);
         System.out.println(vc2.getMoteur());
+
+        ArrayList<Voiture> garage = new ArrayList<Voiture>();
+        garage.add(v1);
+        garage.add(vc1);
+        garage.add(vc2);
+        Voiture v2 = new Voiture("Renault", "R5", new Moteur("Renault", 400), 1500);
+        Voiture v3 = new Voiture("Peugeot", "5008", new Moteur("Peugeot", 450), 1800);
+        VoitureDeCourse vc3 =  new VoitureDeCourse("Aston Martin", "DB12", new Moteur("Aston Martin", 600), 1200);
+        garage.add(v2);
+        garage.add(v3);
+        garage.add(vc3);
+
+        garage.sort(Comparator.comparing(Voiture::getPoids));
+        for (Voiture e : garage) {
+            System.out.println(e);
+        }
     }
+
+
+
 }

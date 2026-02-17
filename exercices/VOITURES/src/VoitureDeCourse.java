@@ -22,7 +22,11 @@ public class VoitureDeCourse extends Voiture {
 	}
 
 	public int defVitesseMax(){
-		return this.moteur.getvMax() - (int)(this.poids * 0.05);
+		int resultat =  this.moteur.getvMax() - (int)(this.poids * 0.05);
+		if (resultat < 0){
+			return 0;
+		}
+		return resultat;
 	}
 
 	public String toString(){
