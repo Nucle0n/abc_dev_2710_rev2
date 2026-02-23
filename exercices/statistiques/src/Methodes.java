@@ -58,11 +58,12 @@ public class Methodes {
         
         salaires.sort(Comparator.naturalOrder());
         // salaires.sort(Comparator.reverseOrder());
+        // Collections.sort(this.salaire);
 
         return salaires;
     }
 
-    public static double moyenne(ArrayList<Double> _liste){
+    public double moyenne(){
         
         double total = 0;
 
@@ -79,7 +80,7 @@ public class Methodes {
         // return total/liste.size();
     }
 
-    public static double mediane(ArrayList<Double> _liste){
+    public double mediane(){
         
         int temps = 0;
         double res = 0.0;
@@ -96,7 +97,7 @@ public class Methodes {
             }
     }
 
-    public static double ecart(ArrayList<Double> _liste){
+    public double ecart(ArrayList<Double> _liste){
         
         double tmp = 0.0;
         double res = 0.0;
@@ -104,8 +105,7 @@ public class Methodes {
         for (double e : _liste){
             tmp += Math.pow((e - Methodes.moyenne(_liste)),2);            
         }
-        res = Math.sqrt(tmp/100);
-        return res;
+        return = Math.sqrt(tmp/salaires.size());
     }
 
     /**

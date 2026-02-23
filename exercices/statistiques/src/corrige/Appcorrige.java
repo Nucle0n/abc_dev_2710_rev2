@@ -3,10 +3,13 @@ package corrige;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import corrige.com.edu.Stat;
+
 public class Appcorrige {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
+        int count = 0;
 
         String data =   "2100,2150,2200,2250,2300,2350,2400,2450,2500,2550,2600,"+
                         "2650,2700,2750,2800,2900,2950,2950,3000,3000,3000,3000,"+
@@ -26,11 +29,32 @@ public class Appcorrige {
         for (String valeur : tabData) {
             dataSalaire.add(Double.parseDouble(valeur));          
         }
+
     
         for (Double element : dataSalaire) {
             System.out.print(element + ", ");
         }
     
+
+        Stat objetStat  = new Stat(dataSalaire);
+
+        double moyenne      = objetStat.calculerMoyenne();
+        double ecart        = objetStat.calculerEcartType();
+        double mediane      = objetStat.calculerMedianne();
+        double[] quartiles  = objetStat.calculerQuartile();
+
+        System.out.println("\n");
+
+        System.out.println("Salaire moyen de l'échantillon : " + moyenne +"€");
+        System.out.println("Ecart type à la moyenne + ou - : " + ecart+"€");
+        System.out.println("Salaire médian : " + mediane +"€");
+        for (double d : quartiles) {
+            count++;
+            System.out.println("Q"+count+" : "+d);
+            
+        }
+
+
         sc.close();
     }
 
