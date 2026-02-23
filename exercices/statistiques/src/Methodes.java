@@ -56,8 +56,8 @@ public class Methodes {
             salaires.add(salaires.get(i-1) + 400);
         }
         
-        // salaires.sort(Comparator.naturalOrder());
-        salaires.sort(Comparator.reverseOrder());
+        salaires.sort(Comparator.naturalOrder());
+        // salaires.sort(Comparator.reverseOrder());
 
         return salaires;
     }

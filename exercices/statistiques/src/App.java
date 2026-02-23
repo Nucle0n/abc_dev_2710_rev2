@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args)
     {
-        double moyenne, mediane, ecart, q1, q2;
+        double moyenne, mediane, ecart, q1, q3;
 
 
         ArrayList<Double> salaires = Methodes.salairesListe();        
@@ -25,7 +25,10 @@ public class App {
         ecart = Methodes.ecart(salaires);
         System.out.println("\n\033[1;4;38;2;225;225;0mEcart type :\033[0m "+ ecart);
 
-        // q1 = Methodes.q1(salaires);
+        q1 = Methodes.q1(salaires);
+        System.out.println("\n\033[1;4;38;2;225;225;0mQ1 =\033[0m "+q1);
+        q3 = Methodes.q3(salaires);
+        System.out.println("\033[1;4;38;2;225;225;0mQ3 =\033[0m "+q3);
         System.out.println("");
 
     }
