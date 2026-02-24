@@ -25,15 +25,14 @@ public class Mm {
     {
         Scanner sc = new Scanner(System.in);
 
-        
         int     essais          = 0;
         int[]   combinaison     = new int[4],
                 propositionTab  = new int[4];        
         Verif[] compareTab      = new Verif[4];
 
-        combinaison = generationDeLaCombinaisonSecreteAQuatreChiffres();
+        combinaison = genererCombinaison();
 
-        debug(combinaison);
+        // debug(combinaison);
 
         do 
         {
@@ -50,7 +49,7 @@ public class Mm {
     }
 
     // Methodes
-    public static int[] generationDeLaCombinaisonSecreteAQuatreChiffres()
+    public static int[] genererCombinaison()
     {
         Random  rng = new Random();
         int[]   combinaison = new int[4];
@@ -75,7 +74,7 @@ public class Mm {
         String prop = sc.nextLine();
 
         for (int i = 0; i < ret_jTab.length; i++) {
-            ret_jTab[i] = prop.charAt(i)-'0';
+            ret_jTab[i] = prop.charAt(i)-'0'; // -0 pour retirer la valeur int ASCII correspondant au char 0
         }
         
         return ret_jTab;       
@@ -125,17 +124,17 @@ public class Mm {
      * DEBUG affichage de la combinaison
      **/
 
-    public static void debug(int[] _combinaison)
-    {
-    System.out.print("\n");
+    // public static void debug(int[] _combinaison)
+    // {
+    // System.out.print("\n");
         
-        System.out.print("\n\033[4;1mDebug :\033[m\n" + "Combinaison secrète :\t");
-        for (int i = 0; i < 4; i++)
-        {
-            System.out.print(_combinaison[i]+" ");
-        }
+    //     System.out.print("\n\033[4;1mDebug :\033[m\n" + "Combinaison secrète :\t");
+    //     for (int i = 0; i < 4; i++)
+    //     {
+    //         System.out.print(_combinaison[i]+" ");
+    //     }
 
-        System.out.print("\n");
-    }
+    //     System.out.print("\n");
+    // }
 
 }
