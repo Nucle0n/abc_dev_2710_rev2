@@ -11,7 +11,7 @@ public class AppFraction {
         System.out.print("Numérateur : ");
         numerateur = sc.nextInt();
         
-        System.out.print("Dénominateur : ");
+        System.out.print("Dénominateur : ")
         denominateur = sc.nextInt();
 
         Fraction fraction = new Fraction(denominateur, numerateur);
