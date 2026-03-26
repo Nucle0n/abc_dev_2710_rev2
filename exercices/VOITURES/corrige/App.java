@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import voiture.Voiture;
-import voiture.VoitureCourse;
+import corrige.Voiture;
+import corrige.VoitureCourse;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
 
         Voiture maVoiture = new Voiture("Renault", "TWINGO", 1200, "Nissan", 450);
         int vitesseMax = maVoiture.CalculVitesseMax();

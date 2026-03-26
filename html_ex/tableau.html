@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr"
+<head>
+	<meta charset="UTF-8">
+	<title>Mon 1er tableau HTML</title>
+	<link rel="icon" type="pic/x-icone" href="pic/tableau.png">
+	<link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+<main>
+<h1>Les tableaux, c'est beau !</h1>
+<p></p>
+<div class="bloque_txt">
+            <div class="text">
+				<h2>Quand utiliser un tableau HTML ?</h2>
+				<p>
+				L'utilisation d'une balise &lt;table&gt; est justifiée, et même recommandée, 
+				lorsqu'il s'agit de présenter des données tabulaires. Cela concerne les 
+				informations qui possèdent une relation logique entre des lignes et des 
+				colonnes, comme un calendrier, un comparatif de prix, des statistiques 
+				sportives ou un inventaire de stock. L'objectif est de permettre à 
+				l'utilisateur (et aux lecteurs d'écran pour l'accessibilité) de comprendre 
+				instantanément les corrélations entre les différentes entrées. Un bon 
+				indicateur est le suivant : si vous pouvez copier-coller vos données dans 
+				un logiciel comme Excel et qu'elles restent parfaitement lisibles, alors le 
+				tableau est la structure HTML appropriée.
+				</div>
+				
+			<div class="text">	
+				<h2>Quand est-il déconseillé d'en utiliser ?</h2>
+				<p>
+				Il est fortement déconseillé d'utiliser les tableaux pour la mise en page (layout) 
+				de votre site web (par exemple pour créer une barre latérale ou positionner des images). 
+				Cette pratique, courante dans les années 2000, est aujourd'hui proscrite au profit du CSS 
+				(Flexbox ou Grid), car les tableaux ne sont pas naturellement "responsives" et nuisent 
+				gravement à l'accessibilité. De plus, n'utilisez pas de tableau pour afficher de simples 
+				listes d'éléments sans structure multidimensionnelle ; les balises &lt;ul&gt; ou &lt;ol&gt; sont plus 
+				légères et sémantiquement correctes. En résumé, si votre tableau ne contient qu'une seule 
+				colonne de contenu pour gérer le design, vous faites fausse route.
+				</p>
+			</div>
+</div>
+<hr>
+	<section>
+		<table>
+			<tr>
+			  <td align=center><b>Identifiant &nbsp;</b></td>
+			  <td align=center><b>Nom</b></td>
+			  <td align=left><b>Prénom &nbsp;</b></td>
+			</tr>
+			<tr>
+			  <td>1</td>
+			  <td>Onette</td>
+			  <td>Camille</td>
+			</tr>
+				<tr>
+			  <td>2</td>
+			  <td>Golay</td>
+			  <td>Jerry</td>
+			</tr>
+				<tr>
+			  <td>3</td>
+			  <td>Afritte</td>
+			  <td>Brarack</td>
+			</tr>
+				<tr>
+			  <td>4</td>
+			  <td>Dératé</td>
+			  <td>Daisy</td>
+			</tr>
+				<tr>
+			  <td>5</td>
+			  <td>Troijourd</td>
+			  <td>Adan</td>
+			</tr>
+		</table>
+	</section>
+</main>
+</body>
+</html>
